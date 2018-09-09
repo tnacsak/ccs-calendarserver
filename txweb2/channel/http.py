@@ -118,6 +118,9 @@ def _cachedGetHostByAddr(hostaddr):
     hostname = _cachedHostNames.get(hostaddr)
     if hostname is None:
         try:
+# This change added to "clean" IPv6 like IPv4 addresses on Amazon Ubuntu 16.04.5
+            if hostaddr[0:7] == "::ffff:":
+            	hostaddr = hostaddr[7:]
             hostname = socket.gethostbyaddr(hostaddr)[0]
         except (socket.herror, socket.gaierror):
             hostname = hostaddr

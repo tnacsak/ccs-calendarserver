@@ -24,6 +24,31 @@ To add a CalDAV account using Calendar preferences, follow these steps:
 #. Set the Account Type to CalDAV. Automatic might work depending on your configuration (see Discovery section), but CalDAV should always work.
 #. Supply a valid user name, password, and server address.
 
+---------------------
+iPhone setup
+---------------------
+
+On iPhone side the setup was that simple as it should. 
+
+#. Go to "Preferences" / "Accounts & Passwords" menu
+#. Select "Add Account", where select Other option.
+#. You will see Contacts and Calendars options in the list: you would select "Add CardDAV Account" to add your server into Contacts and "Add CalDAV Account" to have it in Calendars. 
+#. Supply the server address, account name, password and description as needed and that's all. Be aware that that iOS prefers using SSL on port 8843. If something goes wrong, you will get the "Advanced" button at the bottom of the field list, where you can change the settings of SSL or define a non-default port to use.
+
+---------------------
+macOS 10.13 setup
+---------------------
+Unfortunately macOS setup is bit more complicated. Although iOS discovers server path automatically, macOS does not do this in many cases. It is preferred to use "Advanced" mode to setup, which works fluently.
+
+#. Go to "System preferences" and select "Internet Accounts"
+#. Press "+" below the account list (Add account) and select "Add Other Account..." at the end of the list of account types
+#. You will either select "CardDAV account" or "CalDAV account" to set up Calendar or Contacts.
+#. In the popup window select "Account Type" "Advanced"
+#. Supply "User Name", "Password"
+#. Then set "Server Address" where the address **MUST** start with "https://"
+#. Supply "Server Path" as follows: "/principals/__uids__/7D668E08-3966-4CBD-A44D-C9C60E8199D3/" where the last section is the UID attribute of the account would be set up
+
+
 Alternatively, CalDAV accounts for Calendar may be provisioned using the Profile Manager service in `OS X Server <http://www.apple.com/osx/server/>`_.
 
 ------------------------------------
